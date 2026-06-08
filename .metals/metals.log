@@ -2091,3 +2091,91 @@ jun. 04, 2026 5:09:38 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint n
 INFORMACIÓN: Unsupported notification method: $/setTrace
 jun. 04, 2026 5:12:05 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFORMACIÓN: Unsupported notification method: $/setTrace
+jun. 04, 2026 5:13:38 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+jun. 04, 2026 5:15:04 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+2026.06.04 17:16:29 INFO  Shutting down server
+2026.06.04 17:16:29 INFO  Memory monitor stopped
+2026.06.04 17:16:29 INFO  shutting down Metals
+2026.06.04 17:16:29 INFO  Shut down connection with build server.
+2026.06.04 17:16:29 INFO  Exiting server
+2026.06.04 17:54:27 INFO  Started: Metals version 1.6.7 in folders 'C:\Users\USER\Desktop\TIENDAS SALES' for client Visual Studio Code 1.123.0.
+2026.06.04 17:54:27 INFO  Memory monitor started
+2026.06.04 17:54:28 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.06.04 17:54:28 WARN  no build tool detected in workspace 'C:\Users\USER\Desktop\TIENDAS SALES'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.06.04 17:54:28 WARN  Build server is not auto-connectable.
+2026.06.04 17:54:29 INFO  Shutting down server
+2026.06.04 17:54:29 INFO  Memory monitor stopped
+2026.06.04 17:54:29 INFO  shutting down Metals
+2026.06.04 17:54:29 INFO  Exiting server
+2026.06.07 21:28:35 INFO  Started: Metals version 1.6.7 in folders 'C:\Users\USER\Desktop\TIENDAS SALES' for client Visual Studio Code 1.123.0.
+2026.06.07 21:28:35 INFO  Memory monitor started
+2026.06.07 21:28:36 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.06.07 21:28:36 WARN  no build tool detected in workspace 'C:\Users\USER\Desktop\TIENDAS SALES'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2026.06.07 21:28:36 WARN  Build server is not auto-connectable.
+jun. 07, 2026 9:28:38 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+jun. 07, 2026 9:33:22 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+jun. 07, 2026 9:33:22 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+jun. 07, 2026 9:33:22 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+2026.06.07 21:59:03 WARN  no build target for: C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala
+2026.06.07 21:59:03 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:03 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:06 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+jun. 07, 2026 9:59:06 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 5
+2026.06.07 21:59:06 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:06 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+jun. 07, 2026 9:59:06 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 11
+2026.06.07 21:59:06 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+jun. 07, 2026 9:59:06 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 8
+2026.06.07 21:59:06 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+jun. 07, 2026 9:59:06 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 19
+2026.06.07 21:59:08 INFO  time: code lens generation in 2.16s
+2026.06.07 21:59:08 INFO  time: code lens generation in 2.2s
+2026.06.07 21:59:10 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:10 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:10 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:11 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:11 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:11 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:11 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:12 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:12 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:13 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:13 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:13 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:14 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:13 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:15 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+jun. 07, 2026 9:59:15 P. M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+ADVERTENCIA: Unmatched cancel notification for request id 42
+2026.06.07 21:59:15 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:15 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:16 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:16 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:16 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:16 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:16 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:17 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:18 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:22 WARN  no build target for: C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala
+2026.06.07 21:59:22 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:22 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Ranking.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:23 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:23 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:23 WARN  no build target for: C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala
+2026.06.07 21:59:23 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:23 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:24 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:26 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:28 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:28 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+2026.06.07 21:59:42 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7

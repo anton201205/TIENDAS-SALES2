@@ -9,10 +9,9 @@ def leerDatos(): List[Juego] = {
   val contenido =
     Source.fromFile("../datos/videojuegos.json", "UTF-8").mkString
 
-  // Paso 1: separar cada objeto { ... }
+
   val objetoPatron = """\{[^}]+\}""".r
 
-  // Paso 2: dentro de cada objeto, extraer los campos
   val nombrePatron  = """"nombre"\s*:\s*"([^"]+)"""".r
   val puntajePatron = """"puntaje"\s*:\s*([0-9.]+)""".r
   val precioPatron  = """"precio"\s*:\s*([0-9.]+)""".r
@@ -23,7 +22,6 @@ def leerDatos(): List[Juego] = {
     val puntaje = puntajePatron.findFirstMatchIn(obj).map(_.group(1).toDouble)
     val precio  = precioPatron.findFirstMatchIn(obj).map(_.group(1).toDouble)
 
-    // Solo incluir si los 3 campos están presentes
     for {
       n <- nombre
       pt <- puntaje

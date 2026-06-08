@@ -547,6 +547,13 @@ body{
    RANKING
 ======================================== */
 
+.ranking-filtros{
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:16px;
+    padding:24px;
+}
+
 .ranking-card{
 
     background:var(--card-bg);

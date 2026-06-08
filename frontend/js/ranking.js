@@ -28,38 +28,38 @@ async function cargarRanking() {
         resultado.data.forEach((juego, index) => {
 
             contenedor.innerHTML += `
+<div class="col-md-6 col-xl-4">
 
-                <div class="col-lg-6">
+    <div class="ranking-card h-100">
 
-                    <div class="ranking-card">
+        <div class="ranking-position">
+            #${index + 1}
+        </div>
 
-                        <div class="ranking-position">
-                            #${index + 1}
-                        </div>
+        <div class="ranking-content">
 
-                        <div class="ranking-content">
+            <h3 class="mb-3">
+                ${juego.nombre}
+            </h3>
 
-                            <h3>${juego.nombre}</h3>
+            <p class="mb-2">
+                Precio: <strong>S/. ${juego.precio.toFixed(2)}</strong>
+            </p>
 
-                            <p>
-                                Precio: S/. ${juego.precio}
-                            </p>
+            <div class="score-box">
+                ⭐ ${juego.puntuacion}
+            </div>
 
-                            <div class="score-box">
-                                ⭐ ${juego.puntuacion}
-                            </div>
+        </div>
 
-                        </div>
+    </div>
 
-                    </div>
-
-                </div>
-
-            `;
+</div>
+`;
 
         });
 
-    } catch(error) {
+    } catch (error) {
 
         document.getElementById("rankingContainer").innerHTML = `
 

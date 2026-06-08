@@ -17,7 +17,7 @@
         "desarrolladora": "Riot Games",
         "precio": 0.00,
         "puntaje": 8.9,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2020/4/19/d1jrdrpou7hvstulfozq/red-bull-campus-clutch-valorant-agents-phoenix-jett"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@
         "desarrolladora": "EA Sports",
         "precio": 249.90,
         "puntaje": 8.5,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://media.es.wired.com/photos/66f41e9d776de6566d53b7ef/16:9/w_2560%2Cc_limit/EA-Sports-FC-25-Cover.jpg"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@
         "desarrolladora": "Rockstar Games",
         "precio": 119.90,
         "puntaje": 9.4,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://i.ytimg.com/vi/foUaOCzfIRU/maxresdefault.jpg"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@
         "desarrolladora": "CD Projekt Red",
         "precio": 99.90,
         "puntaje": 9.6,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/96b8627588997030e5a6b56ca5e9944756c8f288/capsule_616x353.jpg?t=1768303991"
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@
         "desarrolladora": "CD Projekt Red",
         "precio": 179.90,
         "puntaje": 8.8,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://i.blogs.es/b109e9/cyberpunk2077-johnny-v-rgb_en/1366_2000.jpg"
     },
     {
         "id": 7,
@@ -67,7 +67,7 @@
         "desarrolladora": "FromSoftware",
         "precio": 229.90,
         "puntaje": 9.7,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png"
     },
     {
         "id": 8,
@@ -77,7 +77,7 @@
         "desarrolladora": "Valve",
         "precio": 0.00,
         "puntaje": 8.7,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://gaming-cdn.com/images/products/9459/orig/counter-strike-2-pc-mac-juego-steam-cover.jpg?v=1742208833"
     },
     {
         "id": 9,
@@ -87,7 +87,7 @@
         "desarrolladora": "Rockstar Games",
         "precio": 159.90,
         "puntaje": 9.8,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://i.blogs.es/169695/red0/840_560.jpg"
     },
     {
         "id": 10,
@@ -97,7 +97,7 @@
         "desarrolladora": "Santa Monica Studio",
         "precio": 279.90,
         "puntaje": 9.5,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://i.blogs.es/eadb27/1366_2000/1200_630.jpeg"
     },
     {
         "id": 11,
@@ -107,7 +107,7 @@
         "desarrolladora": "Team Cherry",
         "precio": 49.90,
         "puntaje": 9.3,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch2/70010000117998/39a6c2de074a49a3328f0c4912c5a5b3d6ac071518334c8f26d5bf3c1f119513"
     },
     {
         "id": 12,
@@ -117,6 +117,6 @@
         "desarrolladora": "Re-Logic",
         "precio": 39.90,
         "puntaje": 9.1,
-        "imagen": "https://i.imgur.com/example1.jpg"
+        "imagen": "https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70010000001702/dac3a26570b5ca1ddf703bf0add7cc7c527f71a2b56521baf69e20c7a573c610"
     }
 ]

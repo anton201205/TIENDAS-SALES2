@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "nombre": "Minecraft",
+        "genero": "Sandbox",
+        "plataforma": "PC",
+        "desarrolladora": "Mojang",
+        "precio": 89.90,
+        "puntaje": 9.2,
+        "imagen": "https://preview.redd.it/i-need-help-finding-a-minecraft-cover-art-or-key-art-v0-8m5h8v41rvbd1.png?width=1080&crop=smart&auto=webp&s=6ddd6c1f36fadf37762621f627a24e6ffdca1a8b"
+    },
+    {
+        "id": 2,
+        "nombre": "Valorant",
+        "genero": "Shooter",
+        "plataforma": "PC",
+        "desarrolladora": "Riot Games",
+        "precio": 0.00,
+        "puntaje": 8.9,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "FIFA 25",
+        "genero": "Deportes",
+        "plataforma": "PlayStation",
+        "desarrolladora": "EA Sports",
+        "precio": 249.90,
+        "puntaje": 8.5,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Grand Theft Auto V",
+        "genero": "Accion",
+        "plataforma": "PC",
+        "desarrolladora": "Rockstar Games",
+        "precio": 119.90,
+        "puntaje": 9.4,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "The Witcher 3",
+        "genero": "RPG",
+        "plataforma": "PC",
+        "desarrolladora": "CD Projekt Red",
+        "precio": 99.90,
+        "puntaje": 9.6,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Cyberpunk 2077",
+        "genero": "RPG",
+        "plataforma": "PC",
+        "desarrolladora": "CD Projekt Red",
+        "precio": 179.90,
+        "puntaje": 8.8,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Elden Ring",
+        "genero": "RPG",
+        "plataforma": "PC",
+        "desarrolladora": "FromSoftware",
+        "precio": 229.90,
+        "puntaje": 9.7,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Counter Strike 2",
+        "genero": "Shooter",
+        "plataforma": "PC",
+        "desarrolladora": "Valve",
+        "precio": 0.00,
+        "puntaje": 8.7,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Red Dead Redemption 2",
+        "genero": "Aventura",
+        "plataforma": "PC",
+        "desarrolladora": "Rockstar Games",
+        "precio": 159.90,
+        "puntaje": 9.8,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "God of War Ragnarok",
+        "genero": "Accion",
+        "plataforma": "PlayStation",
+        "desarrolladora": "Santa Monica Studio",
+        "precio": 279.90,
+        "puntaje": 9.5,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Hollow Knight",
+        "genero": "Metroidvania",
+        "plataforma": "PC",
+        "desarrolladora": "Team Cherry",
+        "precio": 49.90,
+        "puntaje": 9.3,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    },
+    {
+        "id": 12,
+        "nombre": "Terraria",
+        "genero": "Sandbox",
+        "plataforma": "PC",
+        "desarrolladora": "Re-Logic",
+        "precio": 39.90,
+        "puntaje": 9.1,
+        "imagen": "https://i.imgur.com/example1.jpg"
+    }
+]

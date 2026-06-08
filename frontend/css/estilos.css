@@ -1,0 +1,708 @@
+
+/* ========================================
+   IMPORTAR FUENTE
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root{
+
+    --bg-primary:#0b1220;
+    --bg-secondary:#111827;
+    --card-bg:rgba(30,41,59,.75);
+
+    --steam-blue:#66c0f4;
+    --steam-blue-dark:#1b6ba8;
+
+    --text-primary:#ffffff;
+    --text-secondary:#cbd5e1;
+
+    --success:#4ade80;
+    --warning:#fbbf24;
+
+}
+
+/* ========================================
+   GENERAL
+======================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top left,#1e3a8a 0%,transparent 30%),
+    radial-gradient(circle at top right,#0f766e 0%,transparent 25%),
+    linear-gradient(
+        180deg,
+        #0b1220 0%,
+        #071018 100%
+    );
+
+    color:var(--text-primary);
+
+    font-family:'Inter',sans-serif;
+
+    min-height:100vh;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar-steam{
+
+    background:
+    rgba(10,15,25,.75);
+
+    backdrop-filter:
+    blur(15px);
+
+    border-bottom:
+    1px solid rgba(102,192,244,.15);
+
+    padding:
+    16px 0;
+
+    transition:.3s;
+}
+
+.navbar-brand{
+
+    color:#66c0f4 ;
+
+    font-size:1.8rem;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.nav-link{
+
+    color:#cbd5e1;
+
+    font-weight:600;
+
+    margin:0 10px;
+
+    position:relative;
+
+    transition:.3s;
+}
+
+.nav-link:hover{
+
+    color:#66c0f4 !important;
+}
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:#66c0f4;
+
+    transition:.3s;
+}
+
+.nav-link:hover::after{
+
+    width:100%;
+}
+
+.btn-store{
+
+    background:
+    linear-gradient(
+        135deg,
+        #66c0f4,
+        #1b6ba8
+    );
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:10px 22px;
+
+    font-weight:700;
+}
+
+.btn-store:hover{
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 8px 20px rgba(102,192,244,.35);
+}
+/* ========================================
+   HERO
+======================================== */
+
+.hero{
+
+    min-height:95vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+
+    linear-gradient(
+        rgba(5,10,20,.75),
+        rgba(5,10,20,.95)
+    ),
+
+    url("https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1920");
+
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+}
+
+.hero h1{
+
+    font-size:5rem;
+    font-weight:900;
+
+    margin-bottom:20px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #66c0f4,
+        #ffffff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+    color:#dbeafe;
+
+    max-width:750px;
+
+    margin:auto;
+
+    font-size:1.3rem;
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.btn-custom{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--steam-blue),
+        var(--steam-blue-dark)
+    );
+
+    border:none;
+
+    color:white;
+
+    padding:15px 35px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+    margin:10px;
+}
+
+.btn-custom:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 15px 30px rgba(102,192,244,.35);
+
+    color:white;
+}
+
+/* ========================================
+   TITULOS
+======================================== */
+
+.section-title{
+
+    text-align:center;
+
+    font-weight:800;
+
+    margin-bottom:60px;
+
+    font-size:2.5rem;
+}
+
+/* ========================================
+   TARJETAS TECNOLOGIAS
+======================================== */
+
+.tech-card{
+
+    background:var(--card-bg);
+
+    backdrop-filter:blur(10px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    text-align:center;
+
+    height:100%;
+
+    transition:.3s;
+}
+
+.tech-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.4);
+}
+
+.tech-icon{
+
+    font-size:3rem;
+
+    color:var(--steam-blue);
+
+    margin-bottom:20px;
+}
+
+/* ========================================
+   ESTADISTICAS
+======================================== */
+
+.stats{
+
+    background:
+    rgba(2,6,23,.7);
+
+    backdrop-filter:blur(10px);
+
+    padding:80px 0;
+}
+
+.stat-number{
+
+    color:var(--steam-blue);
+
+    font-size:3rem;
+
+    font-weight:900;
+}
+
+/* ========================================
+   CATALOGO
+======================================== */
+
+.catalog-card{
+
+    background:var(--card-bg);
+
+    backdrop-filter:blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    height:100%;
+}
+
+.catalog-card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+    border-color:
+    rgba(102,192,244,.4);
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.5),
+    0 0 30px rgba(102,192,244,.25);
+}
+
+.catalog-image{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.catalog-card:hover .catalog-image{
+
+    transform:scale(1.08);
+}
+
+.catalog-body{
+
+    padding:22px;
+}
+
+.game-title{
+
+    color:white;
+
+    font-size:1.3rem;
+
+    font-weight:800;
+
+    margin-bottom:15px;
+}
+
+.game-info{
+
+    color:var(--text-secondary);
+
+    margin-bottom:8px;
+}
+
+.game-price{
+
+    color:var(--success);
+
+    font-size:1.7rem;
+
+    font-weight:900;
+
+    text-shadow:
+    0 0 15px rgba(74,222,128,.3);
+}
+
+.badge-genero{
+
+    background:
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #1e40af
+    );
+
+    border:none;
+
+    padding:8px 14px;
+
+    border-radius:12px;
+}
+
+.score-badge{
+
+    background:
+    linear-gradient(
+        135deg,
+        #fbbf24,
+        #f59e0b
+    );
+
+    color:black;
+
+    font-weight:800;
+
+    padding:8px 14px;
+
+    border-radius:12px;
+}
+
+.placeholder-image{
+
+    height:260px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #1e293b,
+        #334155
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:4rem;
+}
+
+/* ========================================
+   CONSULTAS
+======================================== */
+
+.consulta-card{
+
+    background:var(--card-bg);
+
+    backdrop-filter:blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    height:100%;
+
+    transition:.3s;
+}
+
+.consulta-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.4);
+}
+
+.consulta-icon{
+
+    font-size:4rem;
+
+    color:var(--steam-blue);
+
+    margin-bottom:20px;
+}
+
+.consulta-card h4{
+
+    color:white;
+
+    margin-bottom:15px;
+}
+
+.consulta-card p{
+
+    color:var(--text-secondary);
+}
+
+.resultado-box{
+
+    background:var(--card-bg);
+
+    backdrop-filter:blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:30px;
+}
+
+/* ========================================
+   RANKING
+======================================== */
+
+.ranking-card{
+
+    background:var(--card-bg);
+
+    backdrop-filter:blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transition:.3s;
+
+    height:100%;
+}
+
+.ranking-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.4);
+}
+
+.top-3{
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(251,191,36,.18),
+        rgba(255,255,255,.04)
+    );
+
+    border:
+    1px solid rgba(251,191,36,.25);
+}
+
+.ranking-position{
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    color:var(--warning);
+
+    min-width:120px;
+}
+
+.ranking-content h3{
+
+    color:white;
+
+    margin:0;
+}
+
+.score-box{
+
+    margin-top:12px;
+
+    display:inline-block;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fbbf24,
+        #f59e0b
+    );
+
+    color:black;
+
+    font-weight:800;
+
+    padding:8px 15px;
+
+    border-radius:12px;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer{
+
+    background:
+    rgba(2,6,23,.9);
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#94a3b8;
+}
+
+/* ========================================
+   ANIMACIONES
+======================================== */
+
+.catalog-card,
+.tech-card,
+.consulta-card,
+.ranking-card{
+
+    animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .btn-custom{
+        width:100%;
+        display:block;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+}

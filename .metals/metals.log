@@ -2179,3 +2179,18 @@ ADVERTENCIA: Unmatched cancel notification for request id 42
 2026.06.07 21:59:28 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
 2026.06.07 21:59:28 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
 2026.06.07 21:59:42 INFO  no build target found for C:\Users\USER\Desktop\TIENDAS SALES\motor_scala\Estadisticas.scala. Using presentation compiler with project's scala-library version: 3.3.7
+jun. 07, 2026 10:23:01 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+jun. 07, 2026 10:23:01 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+jun. 07, 2026 10:23:01 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace
+2026.06.07 22:23:27 INFO  Shutting down server
+2026.06.07 22:23:27 INFO  Memory monitor stopped
+2026.06.07 22:23:27 INFO  shutting down Metals
+2026.06.07 22:23:27 INFO  Exiting server
+2026.06.07 22:23:35 INFO  Started: Metals version 1.6.7 in folders 'C:\Users\USER\Desktop\TIENDAS SALES' for client Visual Studio Code 1.123.0.
+2026.06.07 22:23:35 INFO  Memory monitor started
+2026.06.07 22:23:37 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+jun. 07, 2026 10:23:37 P. M. org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMACIÓN: Unsupported notification method: $/setTrace

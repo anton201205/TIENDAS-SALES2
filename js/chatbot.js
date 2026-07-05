@@ -1,5 +1,5 @@
 // ===============================
-// GAMEBOT CHAT ENGINE (FIXED)
+// GAMEBOT CHAT ENGINE (FIXED + UI MEJORADA)
 // ===============================
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,6 +11,8 @@ const typing = document.getElementById("typing");
 const chat = document.getElementById("gamebot");
 const abrirChat = document.getElementById("abrirChat");
 const minimizar = document.getElementById("minimizarChat");
+const agrandar = document.getElementById("agrandarChat");
+const abrirPagina = document.getElementById("abrirPagina");
 
 // ===============================
 // ENVIAR MENSAJE
@@ -26,7 +28,8 @@ input.addEventListener("keypress", (e) => {
 // MINIMIZAR CHAT
 // ===============================
 
-minimizar.addEventListener("click", () => {
+minimizar?.addEventListener("click", () => {
+    chat.classList.remove("agrandado");
     chat.classList.add("minimizado");
     abrirChat.classList.add("visible");
 });
@@ -35,9 +38,28 @@ minimizar.addEventListener("click", () => {
 // ABRIR CHAT
 // ===============================
 
-abrirChat.addEventListener("click", () => {
+abrirChat?.addEventListener("click", () => {
     chat.classList.remove("minimizado");
     abrirChat.classList.remove("visible");
+});
+
+// ===============================
+// AGRANDAR / REDUCIR CHAT
+// ===============================
+
+agrandar?.addEventListener("click", () => {
+    chat.classList.remove("minimizado");
+    chat.classList.toggle("agrandado");
+    agrandar.textContent = chat.classList.contains("agrandado") ? "⤡" : "⛶";
+    agrandar.title = chat.classList.contains("agrandado") ? "Reducir" : "Agrandar";
+});
+
+// ===============================
+// ABRIR EN PÁGINA APARTE
+// ===============================
+
+abrirPagina?.addEventListener("click", () => {
+    window.open("chat.html", "_blank");
 });
 
 // ===============================
@@ -54,13 +76,20 @@ async function enviarMensaje() {
 
     mostrarTyping(true);
 
-    const res = await fetch("http://localhost:5000/chat", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ mensaje: texto })
-    });
+    let res;
+    try {
+        res = await fetch("http://localhost:5000/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ mensaje: texto })
+        });
+    } catch (err) {
+        mostrarTyping(false);
+        agregarMensaje('Error contactando al servidor.', 'bot');
+        return;
+    }
 
     let data;
 
@@ -80,8 +109,8 @@ async function enviarMensaje() {
         agregarMensaje(data.mensaje || data.texto || 'Respuesta recibida', 'bot');
     }
     else if (data.tipo === 'cards' || data.juegos) {
-        const titulo = data.titulo || data.titulo || 'Recomendados';
-        renderCards(titulo, data.juegos || data.juegos || data.data || []);
+        const titulo = data.titulo || 'Recomendados';
+        renderCards(titulo, data.juegos || data.data || []);
     }
     else if (data.tipo === 'prolog') {
         const resultado = data.resultado || data.data || [];
@@ -116,7 +145,7 @@ function agregarMensaje(texto, tipo) {
     scrollBottom();
 }
 
-// Renderiza tarjetas de juegos en el chat
+// Renderiza tarjetas de juegos en el chat (layout compacto horizontal)
 function renderCards(titulo, juegos){
     agregarMensaje(titulo, 'bot');
 
@@ -127,6 +156,7 @@ function renderCards(titulo, juegos){
         const img = document.createElement('img');
         img.src = j.imagen || '';
         img.alt = j.nombre || '';
+        img.loading = 'lazy';
 
         const info = document.createElement('div');
         info.className = 'game-info';
@@ -140,19 +170,24 @@ function renderCards(titulo, juegos){
         const pDev = document.createElement('p');
         pDev.textContent = j.desarrolladora || '';
 
+        const fila = document.createElement('div');
+        fila.className = 'game-info-fila';
+
         const precio = document.createElement('div');
         precio.className = 'precio';
         precio.textContent = (typeof j.precio !== 'undefined') ? ('S/ ' + j.precio) : '';
 
-        const btn = document.createElement('button');
-        btn.className = 'btn-carrito';
-        btn.textContent = 'Agregar al carrito';
+        const btnCarrito = document.createElement('button');
+        btnCarrito.className = 'btn-carrito';
+        btnCarrito.textContent = 'Agregar';
+
+        fila.appendChild(precio);
+        fila.appendChild(btnCarrito);
 
         info.appendChild(h4);
         info.appendChild(pGenero);
         info.appendChild(pDev);
-        info.appendChild(precio);
-        info.appendChild(btn);
+        info.appendChild(fila);
 
         card.appendChild(img);
         card.appendChild(info);

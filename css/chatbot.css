@@ -15,8 +15,18 @@ GAMEBOT
     flex-direction:column;
     box-shadow:0 10px 35px rgba(0,0,0,.45);
     z-index:99999;
-    transition:.3s;
+    transition:width .3s ease, height .3s ease, bottom .3s ease, right .3s ease;
     border:1px solid #2d4d63;
+}
+
+/* ===========================
+ESTADO AGRANDADO
+=========================== */
+
+#gamebot.agrandado{
+    width:480px;
+    height:82vh;
+    max-height:820px;
 }
 
 /* ===========================
@@ -24,46 +34,69 @@ HEADER
 =========================== */
 
 #gamebot-header{
-    height:70px;
+    height:64px;
+    min-height:64px;
     background:#171a21;
     display:flex;
     align-items:center;
-    padding:15px;
+    padding:0 10px 0 15px;
     color:white;
+    gap:6px;
 }
 
 .gamebot-avatar{
-    width:45px;
-    height:45px;
+    width:42px;
+    height:42px;
     border-radius:50%;
     background:#66c0f4;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:22px;
+    font-size:20px;
     margin-right:12px;
+    flex-shrink:0;
 }
 
 .gamebot-info{
     flex:1;
+    min-width:0;
 }
 
 .gamebot-info h3{
     margin:0;
-    font-size:18px;
+    font-size:17px;
+    white-space:nowrap;
 }
 
 .gamebot-info span{
-    font-size:12px;
+    font-size:11px;
     color:#66c0f4;
 }
 
-#minimizarChat{
+.gamebot-controles{
+    display:flex;
+    align-items:center;
+    gap:2px;
+}
+
+.gamebot-controles button{
     border:none;
     background:none;
-    color:white;
+    color:#9fc3db;
     cursor:pointer;
-    font-size:24px;
+    font-size:17px;
+    width:34px;
+    height:34px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.2s;
+}
+
+.gamebot-controles button:hover{
+    background:rgba(102,192,244,.15);
+    color:#66c0f4;
 }
 
 /* ===========================
@@ -126,65 +159,92 @@ MENSAJES
 }
 
 /* ===========================
-TARJETAS JUEGO
+TARJETAS JUEGO (COMPACTAS)
 =========================== */
 
 .game-card{
     width:100%;
+    max-width:340px;
     background:#1b2838;
-    border-radius:15px;
+    border-radius:14px;
     overflow:hidden;
-    margin-top:12px;
+    margin-top:10px;
     box-shadow:0 3px 15px rgba(0,0,0,.3);
     animation:aparecer .3s;
+    display:flex;
+    align-items:stretch;
 }
 
 .game-card img{
-    width:100%;
-    height:180px;
+    width:92px;
+    height:92px;
+    min-width:92px;
     object-fit:cover;
+    flex-shrink:0;
 }
 
 .game-info{
-    padding:15px;
+    padding:10px 12px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-width:0;
+    flex:1;
 }
 
 .game-info h4{
     color:white;
-    margin-bottom:10px;
+    margin:0 0 4px;
+    font-size:14.5px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 .game-info p{
-    color:#c7d5e0;
-    margin:6px 0;
+    color:#9fb7c9;
+    margin:0 0 2px;
+    font-size:12px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.game-info-fila{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:4px;
+    gap:8px;
 }
 
 .precio{
     color:#5cff6d;
     font-weight:bold;
-    font-size:18px;
+    font-size:15px;
+    white-space:nowrap;
 }
 
 /* ===========================
-BOTÓN CARRITO
+BOTÓN CARRITO (compacto, junto al precio)
 =========================== */
 
 .btn-carrito{
-    width:100%;
-    margin-top:12px;
-    padding:12px;
+    padding:6px 10px;
     border:none;
     background:#66c0f4;
     color:#111;
     font-weight:bold;
+    font-size:11.5px;
     cursor:pointer;
-    border-radius:8px;
+    border-radius:7px;
     transition:.25s;
+    white-space:nowrap;
 }
 
 .btn-carrito:hover{
     background:#8fd7ff;
-    transform:translateY(-2px);
+    transform:translateY(-1px);
 }
 
 /* ===========================
@@ -241,7 +301,7 @@ FOOTER
 }
 
 /* ===========================
-BOTÓN FLOTANTE (CORREGIDO)
+BOTÓN FLOTANTE
 =========================== */
 
 #abrirChat{
@@ -270,7 +330,7 @@ MINIMIZADO
 =========================== */
 
 #gamebot.minimizado{
-    height:70px;
+    height:64px;
 }
 
 #gamebot.minimizado #gamebot-body,
@@ -331,11 +391,46 @@ RESPONSIVE
 =========================== */
 
 @media(max-width:500px){
-    #gamebot{
+    #gamebot, #gamebot.agrandado{
         width:100%;
         height:100%;
         right:0;
         bottom:0;
         border-radius:0;
+        max-height:none;
     }
+}
+
+/* ===========================
+MODO PÁGINA COMPLETA (chat.html)
+=========================== */
+
+body.chat-fullpage{
+    background:#0f1a24;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0;
+}
+
+body.chat-fullpage #gamebot{
+    position:relative;
+    width:100%;
+    max-width:820px;
+    height:88vh;
+    max-height:920px;
+    bottom:auto;
+    right:auto;
+    margin:24px;
+}
+
+body.chat-fullpage #abrirChat,
+body.chat-fullpage #agrandarChat,
+body.chat-fullpage #minimizarChat{
+    display:none;
+}
+
+body.chat-fullpage .game-card{
+    max-width:460px;
 }

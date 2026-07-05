@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "slug": "minecraft",
         "nombre": "Minecraft",
         "genero": "Sandbox",
         "plataforma": "PC",
@@ -11,6 +12,7 @@
     },
     {
         "id": 2,
+        "slug": "valorant",
         "nombre": "Valorant",
         "genero": "Shooter",
         "plataforma": "PC",
@@ -21,6 +23,7 @@
     },
     {
         "id": 3,
+        "slug": "fifa25",
         "nombre": "FIFA 25",
         "genero": "Deportes",
         "plataforma": "PlayStation",
@@ -31,6 +34,7 @@
     },
     {
         "id": 4,
+        "slug": "gta5",
         "nombre": "Grand Theft Auto V",
         "genero": "Accion",
         "plataforma": "PC",
@@ -41,6 +45,7 @@
     },
     {
         "id": 5,
+        "slug": "the_witcher_3",
         "nombre": "The Witcher 3",
         "genero": "RPG",
         "plataforma": "PC",
@@ -51,6 +56,7 @@
     },
     {
         "id": 6,
+        "slug": "cyberpunk_2077",
         "nombre": "Cyberpunk 2077",
         "genero": "RPG",
         "plataforma": "PC",
@@ -61,6 +67,7 @@
     },
     {
         "id": 7,
+        "slug": "elden_ring",
         "nombre": "Elden Ring",
         "genero": "RPG",
         "plataforma": "PC",
@@ -71,6 +78,7 @@
     },
     {
         "id": 8,
+        "slug": "counter_strike_2",
         "nombre": "Counter Strike 2",
         "genero": "Shooter",
         "plataforma": "PC",
@@ -81,6 +89,7 @@
     },
     {
         "id": 9,
+        "slug": "red_dead_redemption_2",
         "nombre": "Red Dead Redemption 2",
         "genero": "Aventura",
         "plataforma": "PC",
@@ -91,6 +100,7 @@
     },
     {
         "id": 10,
+        "slug": "god_of_war_ragnarok",
         "nombre": "God of War Ragnarok",
         "genero": "Accion",
         "plataforma": "PlayStation",
@@ -101,6 +111,7 @@
     },
     {
         "id": 11,
+        "slug": "hollow_knight",
         "nombre": "Hollow Knight",
         "genero": "Metroidvania",
         "plataforma": "PC",
@@ -111,6 +122,7 @@
     },
     {
         "id": 12,
+        "slug": "terraria",
         "nombre": "Terraria",
         "genero": "Sandbox",
         "plataforma": "PC",
@@ -118,5 +130,60 @@
         "precio": 39.90,
         "puntaje": 9.1,
         "imagen": "https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/store/software/switch/70010000001702/dac3a26570b5ca1ddf703bf0add7cc7c527f71a2b56521baf69e20c7a573c610"
+    },
+    {
+        "id": 13,
+        "slug": "dark_souls_3",
+        "nombre": "Dark Souls III",
+        "genero": "RPG",
+        "plataforma": "PC",
+        "desarrolladora": "FromSoftware",
+        "precio": 149.90,
+        "puntaje": 9.5,
+        "imagen": "https://static.bandainamcoent.eu/high/dark-souls/dark-souls-3/00-page-setup/ds3_game-thumbnail.jpg"
+    },
+    {
+        "id": 14,
+        "slug": "half_life_2",
+        "nombre": "Half-Life 2",
+        "genero": "Shooter",
+        "plataforma": "PC",
+        "desarrolladora": "Valve",
+        "precio": 29.90,
+        "puntaje": 9.6,
+        "imagen": "https://imgmedia.larepublica.pe/1000x590/larepublica/original/2024/11/16/6738cb9be2dcb85f6f162d77.webp"
+    },
+    {
+        "id": 15,
+        "slug": "gta_san_andreas",
+        "nombre": "GTA: San Andreas",
+        "genero": "Accion",
+        "plataforma": "PC",
+        "desarrolladora": "Rockstar Games",
+        "precio": 59.90,
+        "puntaje": 9.3,
+        "imagen": "https://i.blogs.es/c97ab3/trucos-san-andreas-1/840_560.jpg"
+    },
+    {
+        "id": 16,
+        "slug": "minecraft_dungeons",
+        "nombre": "Minecraft Dungeons",
+        "genero": "Accion",
+        "plataforma": "PC",
+        "desarrolladora": "Mojang",
+        "precio": 69.90,
+        "puntaje": 8.3,
+        "imagen": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000021401/59686225dba24636062a421593effdb4fe136bbfd67b11c621fe92ed36a65734"
+    },
+    {
+        "id": 17,
+        "slug": "god_of_war_2018",
+        "nombre": "God of War (2018)",
+        "genero": "Accion",
+        "plataforma": "PlayStation",
+        "desarrolladora": "Santa Monica Studio",
+        "precio": 199.90,
+        "puntaje": 9.7,
+        "imagen": "https://i.ytimg.com/vi/1OlS3W5vgao/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBclDD_Uju1Prn-CruBip5TLEGX3g"
     }
 ]

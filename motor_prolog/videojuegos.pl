@@ -10,6 +10,11 @@ videojuego(red_dead_redemption_2,aventura).
 videojuego(god_of_war_ragnarok,accion).
 videojuego(hollow_knight,metroidvania).
 videojuego(terraria,sandbox).
+videojuego(dark_souls_3,rpg).
+videojuego(half_life_2,shooter).
+videojuego(gta_san_andreas,accion).
+videojuego(minecraft_dungeons,accion).
+videojuego(god_of_war_2018,accion).
 
 plataforma(minecraft,pc).
 plataforma(valorant,pc).
@@ -23,6 +28,11 @@ plataforma(red_dead_redemption_2,pc).
 plataforma(god_of_war_ragnarok,playstation).
 plataforma(hollow_knight,pc).
 plataforma(terraria,pc).
+plataforma(dark_souls_3,pc).
+plataforma(half_life_2,pc).
+plataforma(gta_san_andreas,pc).
+plataforma(minecraft_dungeons,pc).
+plataforma(god_of_war_2018,playstation).
 
 desarrolladora(minecraft,mojang).
 desarrolladora(valorant,riot_games).
@@ -36,3 +46,8 @@ desarrolladora(red_dead_redemption_2,rockstar_games).
 desarrolladora(god_of_war_ragnarok,santa_monica_studio).
 desarrolladora(hollow_knight,team_cherry).
 desarrolladora(terraria,re_logic).
+desarrolladora(dark_souls_3,fromsoftware).
+desarrolladora(half_life_2,valve).
+desarrolladora(gta_san_andreas,rockstar_games).
+desarrolladora(minecraft_dungeons,mojang).
+desarrolladora(god_of_war_2018,santa_monica_studio).

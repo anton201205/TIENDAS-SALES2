@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameBot • Chat completo</title>
+
+    <link rel="stylesheet" href="css/chatbot.css">
+</head>
+
+<body class="chat-fullpage">
+
+    <div id="gamebot">
+
+        <div id="gamebot-header">
+
+            <div class="gamebot-avatar">
+                🎮
+            </div>
+
+            <div class="gamebot-info">
+                <h3>GameBot</h3>
+                <span id="estadoBot">En línea</span>
+            </div>
+
+            <div class="gamebot-controles">
+                <button id="agrandarChat" title="Agrandar">⛶</button>
+                <button id="minimizarChat" title="Minimizar">−</button>
+            </div>
+
+        </div>
+
+        <div id="gamebot-body">
+
+            <div class="mensaje bot">
+                <div class="burbuja">
+                    👋 Hola.
+                    <br><br>
+                    Soy <b>GameBot</b>, aquí en pantalla completa.
+                    <br><br>
+                    Ejemplos:
+                    <ul>
+                        <li>Quiero un RPG</li>
+                        <li>Algo parecido a Minecraft</li>
+                        <li>Juegos para PC</li>
+                        <li>Menores a 100 soles</li>
+                        <li>Top videojuegos</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="typing" style="display:none">
+            GameBot está escribiendo...
+        </div>
+
+        <div id="gamebot-footer">
+            <input id="mensajeChat" type="text" placeholder="Escribe un mensaje...">
+            <button id="btnEnviar">➤</button>
+        </div>
+
+    </div>
+
+    <button id="abrirChat"></button>
+
+    <script src="js/chatbot.js"></script>
+
+</body>
+
+</html>

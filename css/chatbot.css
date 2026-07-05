@@ -1,0 +1,341 @@
+/* ===========================
+GAMEBOT
+=========================== */
+
+#gamebot{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:380px;
+    height:620px;
+    background:#1b2838;
+    border-radius:18px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 10px 35px rgba(0,0,0,.45);
+    z-index:99999;
+    transition:.3s;
+    border:1px solid #2d4d63;
+}
+
+/* ===========================
+HEADER
+=========================== */
+
+#gamebot-header{
+    height:70px;
+    background:#171a21;
+    display:flex;
+    align-items:center;
+    padding:15px;
+    color:white;
+}
+
+.gamebot-avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#66c0f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    margin-right:12px;
+}
+
+.gamebot-info{
+    flex:1;
+}
+
+.gamebot-info h3{
+    margin:0;
+    font-size:18px;
+}
+
+.gamebot-info span{
+    font-size:12px;
+    color:#66c0f4;
+}
+
+#minimizarChat{
+    border:none;
+    background:none;
+    color:white;
+    cursor:pointer;
+    font-size:24px;
+}
+
+/* ===========================
+BODY
+=========================== */
+
+#gamebot-body{
+    flex:1;
+    overflow-y:auto;
+    padding:18px;
+    background:#22384a;
+}
+
+/* Scroll */
+#gamebot-body::-webkit-scrollbar{
+    width:8px;
+}
+
+#gamebot-body::-webkit-scrollbar-thumb{
+    background:#66c0f4;
+    border-radius:10px;
+}
+
+/* ===========================
+MENSAJES
+=========================== */
+
+.mensaje{
+    display:flex;
+    margin-bottom:15px;
+}
+
+.mensaje.usuario{
+    justify-content:flex-end;
+}
+
+.mensaje.bot{
+    justify-content:flex-start;
+}
+
+.burbuja{
+    max-width:78%;
+    padding:14px;
+    border-radius:18px;
+    line-height:1.5;
+    font-size:15px;
+    animation:aparecer .25s;
+}
+
+.usuario .burbuja{
+    background:#66c0f4;
+    color:#111;
+    border-bottom-right-radius:5px;
+}
+
+.bot .burbuja{
+    background:#2a475e;
+    color:white;
+    border-bottom-left-radius:5px;
+}
+
+/* ===========================
+TARJETAS JUEGO
+=========================== */
+
+.game-card{
+    width:100%;
+    background:#1b2838;
+    border-radius:15px;
+    overflow:hidden;
+    margin-top:12px;
+    box-shadow:0 3px 15px rgba(0,0,0,.3);
+    animation:aparecer .3s;
+}
+
+.game-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.game-info{
+    padding:15px;
+}
+
+.game-info h4{
+    color:white;
+    margin-bottom:10px;
+}
+
+.game-info p{
+    color:#c7d5e0;
+    margin:6px 0;
+}
+
+.precio{
+    color:#5cff6d;
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* ===========================
+BOTÓN CARRITO
+=========================== */
+
+.btn-carrito{
+    width:100%;
+    margin-top:12px;
+    padding:12px;
+    border:none;
+    background:#66c0f4;
+    color:#111;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:8px;
+    transition:.25s;
+}
+
+.btn-carrito:hover{
+    background:#8fd7ff;
+    transform:translateY(-2px);
+}
+
+/* ===========================
+TYPING
+=========================== */
+
+#typing{
+    padding:10px;
+    background:#171a21;
+    color:#66c0f4;
+    font-size:13px;
+    font-style:italic;
+    display:none;
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+#gamebot-footer{
+    background:#171a21;
+    display:flex;
+    padding:12px;
+}
+
+#mensajeChat{
+    flex:1;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#2a475e;
+    color:white;
+}
+
+#mensajeChat::placeholder{
+    color:#bbb;
+}
+
+#btnEnviar{
+    margin-left:10px;
+    width:55px;
+    border:none;
+    border-radius:10px;
+    background:#66c0f4;
+    color:#111;
+    cursor:pointer;
+    font-size:18px;
+    transition:.25s;
+}
+
+#btnEnviar:hover{
+    background:#8fd7ff;
+}
+
+/* ===========================
+BOTÓN FLOTANTE (CORREGIDO)
+=========================== */
+
+#abrirChat{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    border:none;
+    background:#66c0f4;
+    color:#111;
+    font-size:28px;
+    cursor:pointer;
+
+    display:none;
+    box-shadow:0 6px 20px rgba(0,0,0,.4);
+}
+
+#abrirChat.visible{
+    display:block;
+}
+
+/* ===========================
+MINIMIZADO
+=========================== */
+
+#gamebot.minimizado{
+    height:70px;
+}
+
+#gamebot.minimizado #gamebot-body,
+#gamebot.minimizado #gamebot-footer,
+#gamebot.minimizado #typing{
+    display:none;
+}
+
+/* ===========================
+LOADER
+=========================== */
+
+.loader{
+    display:flex;
+    gap:5px;
+    margin-top:5px;
+}
+
+.loader span{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#66c0f4;
+    animation:loader .8s infinite alternate;
+}
+
+.loader span:nth-child(2){ animation-delay:.2s; }
+.loader span:nth-child(3){ animation-delay:.4s; }
+
+/* ===========================
+ANIMACIONES
+=========================== */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes loader{
+    from{
+        transform:translateY(0);
+        opacity:.4;
+    }
+    to{
+        transform:translateY(-6px);
+        opacity:1;
+    }
+}
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:500px){
+    #gamebot{
+        width:100%;
+        height:100%;
+        right:0;
+        bottom:0;
+        border-radius:0;
+    }
+}

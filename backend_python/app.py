@@ -9,6 +9,9 @@ import re
 app = Flask(__name__)
 CORS(app)
 
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 RUTA_PL_CHAT = os.path.join(BASE_DIR, "..", "motor_prolog", "chatbot_bridge.pl")
 
 GENEROS = {"rpg": "rpg", "shooter": "shooter", "disparos": "shooter",
@@ -123,7 +126,6 @@ def chat():
         return jsonify({"tipo": "texto", "mensaje": "No encontré juegos que coincidan con esa búsqueda."})
     return jsonify({"tipo": "cards", "titulo": "Encontré estos juegos para ti:", "juegos": juegos})
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def obtener_videojuegos():
     ruta = os.path.join(BASE_DIR, "..", "datos", "videojuegos.json")

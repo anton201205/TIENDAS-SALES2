@@ -9,6 +9,9 @@ import re
 app = Flask(__name__)
 CORS(app)
 
+from autopinger import iniciar_autopinger
+iniciar_autopinger()
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 

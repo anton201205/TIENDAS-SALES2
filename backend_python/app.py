@@ -3,16 +3,29 @@ from flask_cors import CORS
 from videojuegos import obtener_videojuegos
 import subprocess
 import os
+import json
 
 app = Flask(__name__)
 CORS(app)
 
-# ============================================================
-#  CONFIGURACIÓN — SCALA
-# ============================================================
 
-SCALA_EXE     = r"C:\Program Files (x86)\scala\bin\scala.bat"
-SCALA_PROJECT = r"C:\Users\USER\Desktop\TIENDAS SALES\motor_scala"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def obtener_videojuegos():
+    ruta = os.path.join(BASE_DIR, "..", "datos", "videojuegos.json")
+    with open(ruta, "r", encoding="utf-8") as archivo:
+        return json.load(archivo)
+
+SCALA_EXE     = "scala"  # en Linux, ya en el PATH
+SCALA_PROJECT = os.path.join(BASE_DIR, "..", "motor_scala")
+
+def consultar_prolog(goal):
+    ruta_pl = os.path.join(BASE_DIR, "..", "motor_prolog", "consultas.pl")
+    resultado = subprocess.run(
+        ["swipl", "-s", ruta_pl, "-g", goal, "-t", "halt"],
+        capture_output=True, text=True
+    )
+    return resultado.stdout.splitlines()
 
 
 # ============================================================
@@ -33,20 +46,6 @@ def ejecutar_scala(objeto, args=[]):
         cwd=SCALA_PROJECT,
         shell=False
     )
-
-
-def consultar_prolog(goal):
-    resultado = subprocess.run(
-        [
-            "swipl",
-            "-s", "../motor_prolog/consultas.pl",
-            "-g", goal,
-            "-t", "halt"
-        ],
-        capture_output=True,
-        text=True
-    )
-    return resultado.stdout.splitlines()
 
 
 # ============================================================
@@ -323,6 +322,6 @@ def prolog_similares():
 
 
 # ============================================================
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)

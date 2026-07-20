@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: backend-python
+    runtime: docker
+    dockerfilePath: ./backend_python/Dockerfile
+    envVars:
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: motor-prolog-chat
+    runtime: docker
+    dockerfilePath: ./motor_prolog/Dockerfile
+    envVars:
+      - key: PORT
+        value: 10000

@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 // --- CORS: soluciona el error del navegador ---
 app.use(cors({
-    origin: ["https://tu-frontend.onrender.com"],
+    origin: ["https://front-sales-sand.vercel.app"],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"]
 }));

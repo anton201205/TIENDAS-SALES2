@@ -4,10 +4,124 @@ from videojuegos import obtener_videojuegos
 import subprocess
 import os
 import json
+import re
 
 app = Flask(__name__)
 CORS(app)
 
+RUTA_PL_CHAT = os.path.join(BASE_DIR, "..", "motor_prolog", "chatbot_bridge.pl")
+
+GENEROS = {"rpg": "rpg", "shooter": "shooter", "disparos": "shooter",
+           "sandbox": "sandbox", "accion": "accion", "acción": "accion",
+           "aventura": "aventura", "deportes": "deportes", "metroidvania": "metroidvania"}
+
+PLATAFORMAS = {"pc": "pc", "computadora": "pc",
+               "playstation": "playstation", "ps4": "playstation", "ps5": "playstation"}
+
+DEVS = {"mojang": "mojang", "riot": "riot_games", "ea sports": "ea_sports",
+        "rockstar": "rockstar_games", "cd projekt": "cd_projekt_red",
+        "fromsoftware": "fromsoftware", "valve": "valve",
+        "santa monica": "santa_monica_studio", "team cherry": "team_cherry",
+        "re-logic": "re_logic", "re logic": "re_logic"}
+
+JUEGOS_ALIAS = {
+    "minecraft": "minecraft", "valorant": "valorant",
+    "fifa 25": "fifa25", "fifa25": "fifa25", "fifa": "fifa25",
+    "grand theft auto v": "gta5", "grand theft auto": "gta5",
+    "gta v": "gta5", "gta5": "gta5", "gta 5": "gta5", "gta": "gta5",
+    "the witcher 3": "the_witcher_3", "witcher 3": "the_witcher_3", "witcher": "the_witcher_3",
+    "cyberpunk 2077": "cyberpunk_2077", "cyberpunk": "cyberpunk_2077",
+    "elden ring": "elden_ring", "elden": "elden_ring",
+    "counter strike 2": "counter_strike_2", "counter strike": "counter_strike_2",
+    "cs2": "counter_strike_2", "cs 2": "counter_strike_2",
+    "red dead redemption 2": "red_dead_redemption_2", "red dead redemption": "red_dead_redemption_2",
+    "red dead": "red_dead_redemption_2", "rdr2": "red_dead_redemption_2",
+    "god of war ragnarok": "god_of_war_ragnarok", "god of war": "god_of_war_ragnarok", "gow": "god_of_war_ragnarok",
+    "hollow knight": "hollow_knight", "terraria": "terraria"
+}
+
+def detectar_filtro(msg, diccionario):
+    for clave in diccionario:
+        if clave in msg:
+            return diccionario[clave]
+    return "ninguno"
+
+def detectar_juego(msg):
+    for clave in sorted(JUEGOS_ALIAS.keys(), key=len, reverse=True):
+        if clave in msg:
+            return JUEGOS_ALIAS[clave]
+    return None
+
+def detectar_precio_max(msg):
+    patrones = [
+        r"(?:menos de|menor(?:es)?\s*a|inferior(?:es)?\s*a|hasta|no\s*m[aá]s\s*de|m[aá]ximo(?:\s*de)?|por debajo de|debajo de)\s*(\d+(?:[.,]\d+)?)",
+        r"(?:presupuesto(?:\s*de)?|tengo|con)\s*(?:s/\.?\s*)?(\d+(?:[.,]\d+)?)\s*(?:soles?|s/\.?)?",
+        r"s/\.?\s*(\d+(?:[.,]\d+)?)",
+        r"(\d+(?:[.,]\d+)?)\s*soles?\b"
+    ]
+    for p in patrones:
+        m = re.search(p, msg)
+        if m:
+            return float(m.group(1).replace(",", "."))
+    return None
+
+def ejecutar_prolog_chat(goal):
+    resultado = subprocess.run(
+        ["swipl", "-q", "-f", RUTA_PL_CHAT, "-g", goal, "-t", "halt"],
+        capture_output=True, text=True
+    )
+    return [l.strip() for l in resultado.stdout.splitlines() if l.strip()]
+
+@app.route("/chat", methods=["POST"])
+def chat():
+    mensaje = (request.json.get("mensaje") or "").lower()
+
+    if re.match(r"^(hola|buenas|hey)\b", mensaje):
+        return jsonify({"tipo": "texto", "mensaje": "¡Hola! Puedes pedirme juegos por género, plataforma, desarrolladora, precio, o algo parecido a un juego."})
+
+    juego = detectar_juego(mensaje)
+    catalogo = obtener_videojuegos()
+
+    if ("parecido" in mensaje or "similar" in mensaje) and juego:
+        slugs = ejecutar_prolog_chat(f"parecidos({juego})")
+        juegos = [j for j in catalogo if j["slug"] in slugs]
+        original = next((j for j in catalogo if j["slug"] == juego), None)
+        nombre = original["nombre"] if original else juego
+        if not juegos:
+            return jsonify({"tipo": "texto", "mensaje": "No encontré juegos parecidos a ese en el catálogo."})
+        return jsonify({"tipo": "cards", "titulo": f"Juegos parecidos a {nombre}:", "juegos": juegos})
+
+    if ("desarrolladora de" in mensaje or "desarrollador de" in mensaje or re.search(r"qui[eé]n (desarroll|hizo|cre[oó])", mensaje)) and juego:
+        resultado = ejecutar_prolog_chat(f"desarrollador_de({juego})")
+        j = next((j for j in catalogo if j["slug"] == juego), None)
+        if not resultado or not j:
+            return jsonify({"tipo": "texto", "mensaje": "No tengo registrada la desarrolladora de ese juego."})
+        return jsonify({"tipo": "texto", "mensaje": f"{j['nombre']} fue desarrollado por {j['desarrolladora']}."})
+
+    precio_max = detectar_precio_max(mensaje)
+    genero = detectar_filtro(mensaje, GENEROS)
+    plataforma = detectar_filtro(mensaje, PLATAFORMAS)
+    dev = detectar_filtro(mensaje, DEVS)
+
+    if precio_max is not None:
+        hay_otro = genero != "ninguno" or plataforma != "ninguno" or dev != "ninguno"
+        if hay_otro:
+            slugs = ejecutar_prolog_chat(f"buscar({genero}, {plataforma}, {dev})")
+            juegos = [j for j in catalogo if j["slug"] in slugs and j["precio"] <= precio_max]
+        else:
+            juegos = [j for j in catalogo if j["precio"] <= precio_max]
+        if not juegos:
+            return jsonify({"tipo": "texto", "mensaje": f"No encontré juegos por debajo de S/ {precio_max}."})
+        return jsonify({"tipo": "cards", "titulo": f"Juegos por debajo de S/ {precio_max}:", "juegos": juegos})
+
+    if genero == "ninguno" and plataforma == "ninguno" and dev == "ninguno":
+        return jsonify({"tipo": "texto", "mensaje": "No entendí bien qué buscas. Intenta con 'juegos de rpg', 'juegos para pc', 'menores a 100 soles', 'algo parecido a minecraft' o 'desarrolladora de elden ring'."})
+
+    slugs = ejecutar_prolog_chat(f"buscar({genero}, {plataforma}, {dev})")
+    juegos = [j for j in catalogo if j["slug"] in slugs]
+    if not juegos:
+        return jsonify({"tipo": "texto", "mensaje": "No encontré juegos que coincidan con esa búsqueda."})
+    return jsonify({"tipo": "cards", "titulo": "Encontré estos juegos para ti:", "juegos": juegos})
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 

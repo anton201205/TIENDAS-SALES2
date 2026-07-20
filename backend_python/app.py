@@ -32,12 +32,15 @@ def consultar_prolog(goal):
 #  HELPERS
 # ============================================================
 
+def obtener_classpath_scala():
+    with open("/opt/scala-cp.txt", "r") as f:
+        return f.read().strip()
+
 def ejecutar_scala(objeto, args=[]):
-    cmd = [
-        SCALA_EXE,
-        "-classpath", SCALA_PROJECT,
-        objeto
-    ] + [str(a) for a in args]
+    scala_lib_cp = obtener_classpath_scala()
+    classpath = f"{SCALA_PROJECT}:{scala_lib_cp}"
+
+    cmd = ["java", "-cp", classpath, objeto] + [str(a) for a in args]
 
     return subprocess.run(
         cmd,
@@ -66,17 +69,15 @@ def juegos():
 def test():
     try:
         resultado = subprocess.run(
-            ["where", "scala"],
+            ["which", "scala"],  # "where" es de Windows
             capture_output=True,
-            text=True,
-            shell=True
+            text=True
         )
         return jsonify({
-            "stdout":              resultado.stdout,
-            "stderr":              resultado.stderr,
-            "returncode":          resultado.returncode,
-            "scala_existe":        os.path.exists(SCALA_EXE),
-            "motor_scala_existe":  os.path.exists(SCALA_PROJECT)
+            "stdout": resultado.stdout,
+            "stderr": resultado.stderr,
+            "returncode": resultado.returncode,
+            "motor_scala_existe": os.path.exists(SCALA_PROJECT)
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
